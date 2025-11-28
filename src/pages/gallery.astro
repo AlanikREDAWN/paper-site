@@ -22,6 +22,7 @@ const albums = await getCollection("albums")
                         format="avif"
                         width={720}
                         quality="mid"
+                        loading="eager"
                         class:list={[
                             "rounded-lg transition-all",
                             "group-hover:shadow-lg group-hover:opacity-90"
