@@ -1,16 +1,44 @@
 ---
+import "../styles/global.css";
+import { Image } from 'astro:assets';
+import artworkButton from '../assets/artworkButton.png';
+import gamesButton from '../assets/gamesButton.png'
+import greenSparkles from '../assets/greenSparkles.png'
+import greenSparklesv2 from '../assets/greenSparklesv2.png'
+import homeButton from '../assets/homeButton.png'
+import leafStem from '../assets/leafStem.png'
+import mainPage1 from '../assets/mainPage1.png'
+import mainPage2 from '../assets/mainPage2.png'
+import mainPage3 from '../assets/mainPage3.png'
+import mainPageIntro from '../assets/mainPageIntro.png'
+import photographyButton from '../assets/photographyButton.png'
+import portfolioButton from '../assets/portfolioButton.png'
 
+import Navbar from "../components/navbar.astro";
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Lilia</title>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="bg-indigo-50">
+		<Navbar />
+
+		<Image src={mainPageIntro} alt="Hello! I'm Lilia" class="flex justify-center items-start mx-auto m-4" loading="eager"/>
+
+		<Image src={mainPage1} alt="I am an artist, designer, and developer who loves cats!" class="flex justify-center items-start mx-auto p-4" loading="eager"/>
+
+		<Image src={mainPage2} alt="Online, I'm mostly known as KittyCat or KittyCat1o1" class="flex justify-center items-start mx-auto p-4" loading="eager"/>
+
+		<Image src={mainPage3} alt="I don't want to bore you with too many words, so enjoy some of my art!" class="flex justify-center items-start mx-auto p-4" loading="eager"/>
+
+		<button class="flex justify-center items-start mx-auto m-4">
+			<Image src={portfolioButton} alt="Portfolio button" onclick="location.href='/portfolio/'" class="cursor-pointer" loading="eager"/>
+			
+		</button>
 	</body>
 </html>

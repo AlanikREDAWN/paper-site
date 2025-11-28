@@ -1,0 +1,38 @@
+---
+import "../styles/global.css";
+import { Image } from 'astro:assets';
+import artworkButton from '../assets/artworkButton.png';
+import gamesButton from '../assets/gamesButton.png'
+// import greenSparkles from '../assets/greenSparkles.png'
+// import greenSparklesv2 from '../assets/greenSparklesv2.png'
+import homeButton from '../assets/homeButton.png'
+// import leafStem from '../assets/leafStem.png'
+// import mainPage1 from '../assets/mainPage1.png'
+// import mainPage2 from '../assets/mainPage2.png'
+// import mainPage3 from '../assets/mainPage3.png'
+// import mainPageIntro from '../assets/mainPageIntro.png'
+import photographyButton from '../assets/photographyButton.png'
+import portfolioButton from '../assets/portfolioButton.png'
+---
+
+<nav class="flex justify-center">
+    <button class="flex justify-center items-start mx-auto m-4">
+		<Image src={homeButton} alt="home button" onclick="location.href='/'" class="cursor-pointer" loading="eager"/>
+	</button>
+
+    <button class="flex justify-center items-start mx-auto m-4">
+		<Image src={portfolioButton} alt="portfolio button" onclick="location.href='/portfolio/'" class="cursor-pointer" loading="eager"/>
+	</button>
+
+    <button class="flex justify-center items-start mx-auto m-4">
+		<Image src={artworkButton} alt="artwork button" onclick="location.href='/artwork/'" class="cursor-pointer" loading="eager"/>
+	</button>
+
+    <button class="flex justify-center items-start mx-auto m-4">
+		<Image src={photographyButton} alt="photography button" onclick="location.href='/photography/'" class="cursor-pointer" loading="eager"/>
+	</button>
+
+    <button class="flex justify-center items-start mx-auto m-4">
+		<Image src={gamesButton} alt="games button" onclick="location.href='/games/'" class="cursor-pointer" loading="eager"/>
+	</button>
+</nav>
