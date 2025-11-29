@@ -15,7 +15,9 @@ import photographyButton from '../assets/photographyButton.png'
 import portfolioButton from '../assets/portfolioButton.png'
 
 import Navbar from "../components/navbar.astro";
+
 ---
+
 
 <html lang="en">
 	<head>
@@ -24,29 +26,19 @@ import Navbar from "../components/navbar.astro";
 		<meta name="viewport" content="width=device-width initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Lilia</title>
+        <script src="../scripts/50daysScrapbook.js" defer></script>
+        <script src="https://kit.fontawesome.com/e826539e45.js" crossorigin="anonymous"></script>
 	</head>
+
 	<body class="bg-indigo-50">
 		<Navbar />
 
-		<Image src={portfolioButton} alt="portfolio" class="flex justify-center items-start mx-auto m-4 mt-10 mb-20 scale-150" loading="eager"/>
+        <div class="flipbook">
+            <div class="hard">The Last 50 Days of 2025 <small>~ Lilia</small></div>
+            <div class="hard"></div>
+        </div>
 
-		<button class="flex justify-center items-start mx-auto m-4 scale-100">
-			<Image src={artworkButton} alt="artwork" onclick="location.href='/artwork/'" class="cursor-pointer" loading="eager"/>
-		</button>
-
-		<button class="flex justify-center items-start mx-auto m-4 scale-100">
-			<Image src={photographyButton} alt="photography" onclick="location.href='/photography/'" class="cursor-pointer" loading="eager" />
-		</button>
-
-		<button class="flex justify-center items-start mx-auto m-4 scale-100">
-			<Image src={gamesButton} alt="games" onclick="location.href='/games/'" class="cursor-pointer" loading="eager"/>
-		</button>
-		
-
-
-		
-
-		
-
+        <script src="../script/jquery.js"></script>
+        <script src="../scripts/turn.js"></script>
 	</body>
 </html>

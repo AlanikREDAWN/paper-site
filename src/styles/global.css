@@ -11,6 +11,15 @@
     
 }
 
+@font-face {
+    font-family: LiliaHandwriting2025;
+    src: url("../assets/LiliaHandwriting2025.otf");
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+    
+}
 @theme {
     --font-display: "HandwritingFont", serif;
+    --font-handwriting: "LiliaHandwriting2025"
 }
