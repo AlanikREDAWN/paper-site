@@ -15,7 +15,7 @@
     padding: 0; */
     box-sizing: border-box;
     font-family: 'LiliaHandwriting2025';
-    font-size: xx-large;
+    /* font-size: xx-large; */
 }
 
 body {
@@ -25,24 +25,41 @@ body {
     width: 100vw;
     overflow: hidden;
     /* background: #f1c40f; */
-    font-size: small;
+    /* font-size: small; */
 }
 
 .flipbook {
     width: 1000px;
     height: 600px;
-    font-size: small;
+    /* font-size: small; */
+    /* background-image: url("../assets/scrapbookCover.png"); */
 }
 
 .flipbook .hard {
-    background: #b75100 !important;
+    /* background: #b75100 !important; */
+    background: #b75100;
     color: #fff;
     font-weight: bold;
     /* border: none; */
     border: #fff;
     border-width: 20px;
+    background-size: 600px 1000px !important; 
+    background-image: url("../assets/scrapbookCover.png") !important;
+
     
 }
+
+.off {
+    position: relative;
+    top: 15vh;
+    text-align: center;
+    color: #4a3c2d;
+}
+/* 
+.off-center {
+    position: relative;
+    top: 20vh;
+} */
 
 .flipbook .hard .small {
     font-style: italic;
