@@ -1,5 +1,8 @@
 # Astro Starter Kit: Minimal
 
+TODO:
+[] Make book page responsive
+
 ```sh
 npm create astro@latest -- --template minimal
 ```
