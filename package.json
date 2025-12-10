@@ -9,11 +9,14 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/svelte": "^7.2.2",
     "@ksedline/turnjs": "^0.1.0",
     "@tailwindcss/vite": "^4.1.17",
     "astro": "^5.16.3",
     "jquery": "^3.7.1",
-    "tailwindcss": "^4.1.17"
+    "svelte": "^5.45.8",
+    "tailwindcss": "^4.1.17",
+    "typescript": "^5.9.3"
   },
   "devDependencies": {
     "@types/jquery": "^3.5.33"

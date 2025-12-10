@@ -1,4 +1,62 @@
 ---
+import "../../styles/global.css";
+import { getCollection } from "astro:content";
+import { getPhotographyAlbumPhotos } from "../../utils/photographyAlbums";
+import { Image } from 'astro:assets';
+import Navbar from "../../components/navbar.astro";
+
+export async function getStaticPaths() {
+    const photographyAlbums = await getCollection("photographyAlbums");
+
+    const paths = Object.values(photographyAlbums).map((photographyAlbum) => {
+        return {
+            params: {
+                id: photographyAlbum.id,
+            },
+            props: {
+                photographyAlbum,
+            },
+        };
+    });
+
+    return paths;
+}
+
+const { photographyAlbum } = Astro.props;
+const images = await getPhotographyAlbumPhotos(photographyAlbum.id);
+---
+
+<!-- <Navbar /> -->
+<div class="text-center my-16 mb-32">
+    <h1 class="text-5xl xl:text-8xl font-bold font-handwriting">
+        {photographyAlbum.data.title}
+    </h1>
+    <p class="text-lg xl:text-2xl my-4">
+        {photographyAlbum.data.description}
+    </p>
+    <p class="text-2xl my-4 text-center font-display">
+        <a href="/photography/" class="text-black hover:underline">Go back</a>
+    </p>
+
+    <div class="mx-auto container my-8 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5">
+        {
+            images.map((image) => (
+                <Image
+                    src={image}
+                    alt={`Image from ${photographyAlbum.data.title} album`}
+                    format="avif"
+                    quality={50}
+                    class="rounded-sm mb-4 border border-transparent hover:border-gray-300 transition-all duration-300 ease-in-out hover:shadow-lg"
+                    loading="lazy"
+                />
+            ))
+        }
+    </div>
+
+
+</div>
+
+<!-- ---
 import { getCollection } from "astro:content";
 import { getPhotographyAlbumPhotos } from "../../utils/photographyAlbums";
 import { Image } from 'astro:assets';
@@ -21,7 +79,7 @@ export async function getStaticPaths() {
 }
 
 const  { photographyAlbum } = Astro.props;
-const photos = await getPhotographyAlbumPhotos(photographyAlbum.id)
+const images = await getPhotographyAlbumPhotos(photographyAlbum.id)
 ---
 
 <div class="text-center my-16 mb-32">
@@ -32,11 +90,11 @@ const photos = await getPhotographyAlbumPhotos(photographyAlbum.id)
         {photographyAlbum.data.description}
     </p>
 
-    <div class="mx-auto container my-8 sm:columns-2 md: columns-3 lg:columns-4 xl:columns-5">
+    <div class="mx-auto container my-8 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5">
         {
-            photos.map((photo) => (
+            images.map((image) => (
                 <Image
-                src={photo}
+                src={image}
                 alt={`Image from ${photographyAlbum.data.title} photography album`}
                 quality="mid"
                 class="rounded-sm mb-4 border border-transparent hover:border-gray-300 transition-all duration-300 ease-in-out hover:shadow-lg"
@@ -47,6 +105,6 @@ const photos = await getPhotographyAlbumPhotos(photographyAlbum.id)
     </div>
 
     <p class="text-lg my-4 text-center">
-        <a href="/photographyGallery" class="text-white hover-underline">Go back</a>
+        <a href="/photographyGallery/" class="text-white hover-underline">Go back</a>
     </p>
-</div>
+</div> -->

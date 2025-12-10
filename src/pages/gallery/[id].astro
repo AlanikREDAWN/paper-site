@@ -28,11 +28,14 @@ const images = await getAlbumImages(album.id);
 
 <!-- <Navbar /> -->
 <div class="text-center my-16 mb-32">
-    <h1 class="text-3xl xl:text-6xl font-bold">
+    <h1 class="text-5xl xl:text-8xl font-bold font-handwriting">
         {album.data.title}
     </h1>
     <p class="text-lg xl:text-2xl my-4">
         {album.data.description}
+    </p>
+    <p class="text-2xl my-4 text-center font-display">
+        <a href="/artwork/" class="text-black hover:underline">Go back</a>
     </p>
 
     <div class="mx-auto container my-8 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5">
@@ -50,7 +53,5 @@ const images = await getAlbumImages(album.id);
         }
     </div>
 
-    <p class="text-lg my-4 text-center">
-        <a href="/artwork/" class="text-black hover:underline">Go back</a>
-    </p>
+
 </div>

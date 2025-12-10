@@ -2,7 +2,7 @@
 import "../styles/global.css";
 import { Image } from 'astro:assets';
 // import artworkButton from '../assets/artworkButton.png';
-// import gamesButton from '../assets/gamesButton.png'
+import gamesButton from '../assets/gamesButton.png'
 // import greenSparkles from '../assets/greenSparkles.png'
 // import greenSparklesv2 from '../assets/greenSparklesv2.png'
 // import homeButton from '../assets/homeButton.png'
@@ -27,6 +27,8 @@ import Navbar from "../components/navbar.astro";
 	</head>
 	<body class="bg-indigo-50">
 		<Navbar />
-         <p>Games</p>
+		<Image src={gamesButton} alt="games" class="flex justify-center items-start mx-auto m-4 mt-10 mb-20 scale-150" loading="eager"/>
+         <!-- <p>Games</p> -->
+		<astro-dev-toolbar-card icon="astro:logo" link="https://github.com/withastro/astro/issues/new/choose">Report an issue</astro-dev-toolbar-card>
 	</body>
 </html>
