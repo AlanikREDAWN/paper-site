@@ -34,9 +34,10 @@
 
 {#await playerPromise then player}
     {#if player.isPlaying}
-        <a class="now-playing font-handwriting text-5xl text-center flex justify-center text-amber-900" href={player.songUrl}>
-            Now playing on spotify:<br>
-            {player.title} - {player.artist}
+        <a class="now-playing font-handwriting text-4xl text-center flex justify-center text-amber-900" href={player.songUrl}>
+            
+            <p>Now playing on spotify:</p>
+            <span class="pl-4"><p class="text-amber-800">{player.title} - {player.artist}</p></span>
         </a>
     {/if}
 {/await}

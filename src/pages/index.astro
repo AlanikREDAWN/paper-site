@@ -29,6 +29,7 @@ import NowPlaying from "../components/NowPlaying.svelte";
 	<body class="bg-indigo-50">
 		<Navbar />
 
+		<NowPlaying client:idle />
 
 		<Image src={mainPageIntro} alt="Hello! I'm Lilia" class="flex justify-center items-start mx-auto m-4" loading="eager"/>
 
@@ -43,8 +44,10 @@ import NowPlaying from "../components/NowPlaying.svelte";
 			
 		</button>
 
+		
+
 		<p class="font-handwriting text-6xl flex justify-center p-10">Also, check out my  <a href="/scrapbookGallery/" class="text-amber-700">"scrapbook" gallery</a>!</p>
 
-		<NowPlaying client:idle />
+		
 	</body>
 </html>
