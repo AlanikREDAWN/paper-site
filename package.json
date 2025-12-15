@@ -19,6 +19,7 @@
     "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "@types/jquery": "^3.5.33"
+    "@types/jquery": "^3.5.33",
+    "sass-embedded": "^1.96.0"
   }
 }

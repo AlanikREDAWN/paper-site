@@ -15,6 +15,8 @@ import gamesButton from '../assets/gamesButton.png'
 // import portfolioButton from '../assets/portfolioButton.png'
 
 import Navbar from "../components/navbar.astro";
+import PopUp from "../components/PopUp.astro";
+import GameCard from "../components/gameCard.astro";
 ---
 
 <html lang="en">
@@ -28,7 +30,34 @@ import Navbar from "../components/navbar.astro";
 	<body class="bg-indigo-50">
 		<Navbar />
 		<Image src={gamesButton} alt="games" class="flex justify-center items-start mx-auto m-4 mt-10 mb-20 scale-150" loading="eager"/>
-         <!-- <p>Games</p> -->
+		<!-- <p>Games</p> -->
 		<!-- <h1 class="font-handwriting">COMING SOON</h1> -->
-		 <p class="font-handwriting text-6xl flex justify-center p-10">COMING SOON!</p>
+		<!-- <p class="font-handwriting text-6xl flex justify-center p-10"><a href="">Slime Game</a></p> -->
+		<!-- <p class="font-handwriting text-6xl flex justify-center p-10">COMING SOON!</p> -->
+
+		<!-- <Modal id="dialog" open="Slime Game">
+			<main slot="main">
+			</main>
+			<button slot="close">Close</button>
+		</Modal> -->
+
+		<!-- <Modal id="dialog" open="Open modal">
+  			<main slot="main">
+    			<p>Some extra content you would like here</p>
+    			<hr />
+    			<img width="60" height="80" src="/assets/logo.svg" alt="Astro logo" />
+  			</main>
+  			<button slot="close">Close modal</button>
+		</Modal> -->
+		<!-- <PopUp open="Slime Game" popUpName="Slime Game">
+			<div slot="iframe">
+				<a href="https://itch.io/embed-upload/11424737?color=333333">Click me!</a>
+			
+		</PopUp> -->
+
+		<GameCard gameTitle="Slime Game" gameSrc="https://itch.io/embed-upload/11424737?color=333333" />
+		<GameCard gameTitle="Dragonpedia" gameSrc="https://itch.io/embed-upload/13886107?color=e4a672" />
+		<GameCard gameTitle="Kitten Klicker" gameSrc="https://kittycat81.itch.io/kitten-klicker" />
 </html>
+
+<!-- https://itch.io/embed-upload/11424737?color=333333 -->

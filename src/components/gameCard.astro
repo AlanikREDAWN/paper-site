@@ -1,8 +1,24 @@
 ---
-const { gameTitle } = Astro.props;
-const { gameImage } = Astro.props;
+// interface Props {
+//     gameTitle: string;
+//     gameImage: string;
+//     gameImageAlt: string;
+// }
+const { gameTitle, gameSrc } = Astro.props;
+// const { gameImage } = Astro.props;
+// const { gameImageAlt } = Astro.props;
+
+
 ---
 
-<div>
-    
-</div>
+<p class="font-handwriting text-6xl flex justify-center p-10 hover:text-amber-700"><a href={gameSrc} target="_blank">{gameTitle}</a></p>
+
+<!-- <div class="relative">
+    <Image
+        src={gameImage}
+        alt={gameImageAlt}
+        widths={[240, 540, 720, gameImage.width]}
+        sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${gameImage.width}px`}
+        class="w-full h-auto rounded-lg"
+    />
+</div> -->
