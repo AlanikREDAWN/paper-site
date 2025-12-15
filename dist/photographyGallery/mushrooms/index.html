@@ -1,0 +1,52 @@
+<!DOCTYPE html><!-- <Navbar /> --><link rel="stylesheet" href="/_astro/index.BJyr6LDL.css"><div class="text-center my-16 mb-32"> <h1 class="text-5xl xl:text-8xl font-bold font-handwriting"> Mushrooms </h1> <p class="text-lg xl:text-2xl my-4">  </p> <p class="text-2xl my-4 text-center font-display"> <a href="/photography/" class="text-black hover:underline">Go back</a> </p> <div class="mx-auto container my-8 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5"> <img src="/_astro/new-IMG_9590.CCuADWU6_1pPG8E.avif" alt="Image from Mushrooms album" loading="lazy" decoding="async" fetchpriority="auto" width="4032" height="3024" class="rounded-sm mb-4 border border-transparent hover:border-gray-300 transition-all duration-300 ease-in-out hover:shadow-lg"><img src="/_astro/new-IMG_9642.DozmUq9y_2wHKPT.avif" alt="Image from Mushrooms album" loading="lazy" decoding="async" fetchpriority="auto" width="4032" height="3024" class="rounded-sm mb-4 border border-transparent hover:border-gray-300 transition-all duration-300 ease-in-out hover:shadow-lg"><img src="/_astro/new-IMG_9587.a3FbteDM_Z117jST.avif" alt="Image from Mushrooms album" loading="lazy" decoding="async" fetchpriority="auto" width="4032" height="3024" class="rounded-sm mb-4 border border-transparent hover:border-gray-300 transition-all duration-300 ease-in-out hover:shadow-lg"><img src="/_astro/new-IMG_9636.CAbVrtaH_uQsno.avif" alt="Image from Mushrooms album" loading="lazy" decoding="async" fetchpriority="auto" width="4032" height="3024" class="rounded-sm mb-4 border border-transparent hover:border-gray-300 transition-all duration-300 ease-in-out hover:shadow-lg"><img src="/_astro/new-IMG_9639.BrEXU0Zl_ZHd6wf.avif" alt="Image from Mushrooms album" loading="lazy" decoding="async" fetchpriority="auto" width="4032" height="3024" class="rounded-sm mb-4 border border-transparent hover:border-gray-300 transition-all duration-300 ease-in-out hover:shadow-lg"><img src="/_astro/new-IMG_9592.wIKpsQVK_1majcr.avif" alt="Image from Mushrooms album" loading="lazy" decoding="async" fetchpriority="auto" width="4032" height="3024" class="rounded-sm mb-4 border border-transparent hover:border-gray-300 transition-all duration-300 ease-in-out hover:shadow-lg"><img src="/_astro/new-IMG_9643.C4qlkbeP_2nhy5x.avif" alt="Image from Mushrooms album" loading="lazy" decoding="async" fetchpriority="auto" width="4032" height="3024" class="rounded-sm mb-4 border border-transparent hover:border-gray-300 transition-all duration-300 ease-in-out hover:shadow-lg"><img src="/_astro/new-IMG_9588.BWxHWW4z_1K7hAO.avif" alt="Image from Mushrooms album" loading="lazy" decoding="async" fetchpriority="auto" width="4032" height="3024" class="rounded-sm mb-4 border border-transparent hover:border-gray-300 transition-all duration-300 ease-in-out hover:shadow-lg"><img src="/_astro/new-IMG_9593.D-t8ucrB_1bCvao.avif" alt="Image from Mushrooms album" loading="lazy" decoding="async" fetchpriority="auto" width="4032" height="3024" class="rounded-sm mb-4 border border-transparent hover:border-gray-300 transition-all duration-300 ease-in-out hover:shadow-lg"><img src="/_astro/new-IMG_9641.CbwHvUds_1Ed1Wn.avif" alt="Image from Mushrooms album" loading="lazy" decoding="async" fetchpriority="auto" width="4032" height="3024" class="rounded-sm mb-4 border border-transparent hover:border-gray-300 transition-all duration-300 ease-in-out hover:shadow-lg"><img src="/_astro/new-IMG_9640.Dvn0n7vS_Z1VvL6f.avif" alt="Image from Mushrooms album" loading="lazy" decoding="async" fetchpriority="auto" width="4032" height="3024" class="rounded-sm mb-4 border border-transparent hover:border-gray-300 transition-all duration-300 ease-in-out hover:shadow-lg"><img src="/_astro/new-IMG_9589.CawDLcuD_2tWdzz.avif" alt="Image from Mushrooms album" loading="lazy" decoding="async" fetchpriority="auto" width="4032" height="3024" class="rounded-sm mb-4 border border-transparent hover:border-gray-300 transition-all duration-300 ease-in-out hover:shadow-lg"><img src="/_astro/new-IMG_9634.Bu7GyS3b_ZRjJqn.avif" alt="Image from Mushrooms album" loading="lazy" decoding="async" fetchpriority="auto" width="4032" height="3024" class="rounded-sm mb-4 border border-transparent hover:border-gray-300 transition-all duration-300 ease-in-out hover:shadow-lg"><img src="/_astro/new-IMG_9591.C5ydTzhI_LaSKL.avif" alt="Image from Mushrooms album" loading="lazy" decoding="async" fetchpriority="auto" width="4032" height="3024" class="rounded-sm mb-4 border border-transparent hover:border-gray-300 transition-all duration-300 ease-in-out hover:shadow-lg"><img src="/_astro/new-IMG_9595.BglTRppk_Z1GeMV8.avif" alt="Image from Mushrooms album" loading="lazy" decoding="async" fetchpriority="auto" width="3024" height="4032" class="rounded-sm mb-4 border border-transparent hover:border-gray-300 transition-all duration-300 ease-in-out hover:shadow-lg"><img src="/_astro/new-IMG_9635.BQiQ-N2C_ZIsuRn.avif" alt="Image from Mushrooms album" loading="lazy" decoding="async" fetchpriority="auto" width="4032" height="3024" class="rounded-sm mb-4 border border-transparent hover:border-gray-300 transition-all duration-300 ease-in-out hover:shadow-lg"> </div> </div> <!-- ---
+import { getCollection } from "astro:content";
+import { getPhotographyAlbumPhotos } from "../../utils/photographyAlbums";
+import { Image } from 'astro:assets';
+
+export async function getStaticPaths() {
+    const photographyAlbums = await getCollection("photographyAlbums");
+
+    const paths = Object.values(photographyAlbums).map((photographyAlbum) => {
+        return {
+            params: {
+                id: photographyAlbum.id,
+            },
+            props: {
+                photographyAlbum,
+            },
+        };
+    });
+
+    return paths;
+}
+
+const  { photographyAlbum } = Astro.props;
+const images = await getPhotographyAlbumPhotos(photographyAlbum.id)
+---
+
+<div class="text-center my-16 mb-32">
+    <h1 class="text-3xl xl:text-6xl font-bold">
+        {photographyAlbum.data.title}
+    </h1>
+    <p class="text-lg xl:text-2xl my-4">
+        {photographyAlbum.data.description}
+    </p>
+
+    <div class="mx-auto container my-8 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5">
+        {
+            images.map((image) => (
+                <Image
+                src={image}
+                alt={`Image from ${photographyAlbum.data.title} photography album`}
+                quality="mid"
+                class="rounded-sm mb-4 border border-transparent hover:border-gray-300 transition-all duration-300 ease-in-out hover:shadow-lg"
+                loading=lazy
+                />
+            ))
+        }
+    </div>
+
+    <p class="text-lg my-4 text-center">
+        <a href="/photographyGallery/" class="text-white hover-underline">Go back</a>
+    </p>
+</div> -->

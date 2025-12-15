@@ -1,0 +1,52 @@
+<!DOCTYPE html><!-- <Navbar /> --><link rel="stylesheet" href="/_astro/index.BJyr6LDL.css"><div class="text-center my-16 mb-32"> <h1 class="text-5xl xl:text-8xl font-bold font-handwriting"> Urban </h1> <p class="text-lg xl:text-2xl my-4">  </p> <p class="text-2xl my-4 text-center font-display"> <a href="/photography/" class="text-black hover:underline">Go back</a> </p> <div class="mx-auto container my-8 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5"> <img src="/_astro/new-IMG_9681.ebAw8Hdl_151QoA.avif" alt="Image from Urban album" loading="lazy" decoding="async" fetchpriority="auto" width="4032" height="3024" class="rounded-sm mb-4 border border-transparent hover:border-gray-300 transition-all duration-300 ease-in-out hover:shadow-lg"><img src="/_astro/new-IMG_9680.Bw6GqpGo_1I2Lu4.avif" alt="Image from Urban album" loading="lazy" decoding="async" fetchpriority="auto" width="4032" height="3024" class="rounded-sm mb-4 border border-transparent hover:border-gray-300 transition-all duration-300 ease-in-out hover:shadow-lg"><img src="/_astro/new-IMG_9679.CNEImT8M_Abmrg.avif" alt="Image from Urban album" loading="lazy" decoding="async" fetchpriority="auto" width="4032" height="3024" class="rounded-sm mb-4 border border-transparent hover:border-gray-300 transition-all duration-300 ease-in-out hover:shadow-lg"> </div> </div> <!-- ---
+import { getCollection } from "astro:content";
+import { getPhotographyAlbumPhotos } from "../../utils/photographyAlbums";
+import { Image } from 'astro:assets';
+
+export async function getStaticPaths() {
+    const photographyAlbums = await getCollection("photographyAlbums");
+
+    const paths = Object.values(photographyAlbums).map((photographyAlbum) => {
+        return {
+            params: {
+                id: photographyAlbum.id,
+            },
+            props: {
+                photographyAlbum,
+            },
+        };
+    });
+
+    return paths;
+}
+
+const  { photographyAlbum } = Astro.props;
+const images = await getPhotographyAlbumPhotos(photographyAlbum.id)
+---
+
+<div class="text-center my-16 mb-32">
+    <h1 class="text-3xl xl:text-6xl font-bold">
+        {photographyAlbum.data.title}
+    </h1>
+    <p class="text-lg xl:text-2xl my-4">
+        {photographyAlbum.data.description}
+    </p>
+
+    <div class="mx-auto container my-8 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5">
+        {
+            images.map((image) => (
+                <Image
+                src={image}
+                alt={`Image from ${photographyAlbum.data.title} photography album`}
+                quality="mid"
+                class="rounded-sm mb-4 border border-transparent hover:border-gray-300 transition-all duration-300 ease-in-out hover:shadow-lg"
+                loading=lazy
+                />
+            ))
+        }
+    </div>
+
+    <p class="text-lg my-4 text-center">
+        <a href="/photographyGallery/" class="text-white hover-underline">Go back</a>
+    </p>
+</div> -->
