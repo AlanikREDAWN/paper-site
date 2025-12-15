@@ -12,6 +12,5 @@ export default defineConfig({
 
   integrations: [svelte()],
 
-  site: 'https://alanikredawn.github.io',
-  base: '/paper-site',
+  site: 'https://paper-site.lilia.rocks',
 });
