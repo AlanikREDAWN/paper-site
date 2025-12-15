@@ -6,3 +6,4 @@ TO-DO:
 [] create game cards for games page
 [] make sure everything is moblie friendly
 [] create custom 404 page
+[] set favicon
