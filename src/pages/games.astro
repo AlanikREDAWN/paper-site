@@ -15,7 +15,7 @@ import gamesButton from '../assets/gamesButton.png'
 // import portfolioButton from '../assets/portfolioButton.png'
 
 import Navbar from "../components/navbar.astro";
-import PopUp from "../components/PopUp.astro";
+// import PopUp from "../components/PopUp.astro";
 import GameCard from "../components/gameCard.astro";
 ---
 
@@ -27,7 +27,7 @@ import GameCard from "../components/gameCard.astro";
 		<meta name="generator" content={Astro.generator} />
 		<title>Lilia</title>
 	</head>
-	<body class="bg-indigo-50">
+	<body class="bg-[url(../assets/personalSiteBackground.png)] bg-cover">
 		<Navbar />
 		<Image src={gamesButton} alt="games" class="flex justify-center items-start mx-auto m-4 mt-10 mb-20 scale-150" loading="eager"/>
 		<!-- <p>Games</p> -->
