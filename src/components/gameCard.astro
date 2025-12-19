@@ -4,14 +4,42 @@
 //     gameImage: string;
 //     gameImageAlt: string;
 // }
-const { gameTitle, gameSrc } = Astro.props;
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+// interface Props {
+//   gameTitle: string;
+//   gameSrc: string;
+//   gameImg: ImageMetadata;
+// }
+const { gameTitle, gameSrc, gameImg } = Astro.props;
+
+// const images = import.meta.glob<{ default: imageMetadata }>('../assets/*.{jpeg,jpg,png,gif}');
+
+// if (!images[gameImgPath]) {
+//     throw new Error(`Image "${gameImgPath}" does not exist`);
+// }
+
+// const gameImg = images[gameImgPath]();
 // const { gameImage } = Astro.props;
 // const { gameImageAlt } = Astro.props;
 
 
 ---
-
-<p class="font-handwriting text-6xl flex justify-center p-10 hover:text-amber-700"><a href={gameSrc} target="_blank">{gameTitle}</a></p>
+<!-- <a href={gameSrc} target="_blank">{gameTitle}</a> -->
+<div class="mx-auto container my-8 w-sm md:w-md lg:w-lg xl:w-xl font-handwriting text-6xl flex justify-center p-10 text-center hover:text-amber-700">
+    <a href={gameSrc} target="_blank">
+        <Image
+        src={gameImg}
+        alt={`Image from ${gameTitle}`}
+        format="avif"
+        quality={50}
+        class="rounded-sm mb-4 border border-transparent hover:border-gray-300 transition-all duration-300 ease-in-out hover:shadow-lg"
+        loading="lazy"
+        />
+        {gameTitle}
+    </a>
+</div>
+<!-- <p class="font-handwriting text-6xl flex justify-center p-10 hover:text-amber-700"><a href={gameSrc} target="_blank">{gameTitle}</a></p> -->
 
 <!-- <div class="relative">
     <Image

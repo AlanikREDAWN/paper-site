@@ -16,7 +16,12 @@ import gamesButton from '../assets/gamesButton.png'
 
 import Navbar from "../components/navbar.astro";
 // import PopUp from "../components/PopUp.astro";
+
 import GameCard from "../components/gameCard.astro";
+
+import slimeGameImage from "../assets/slimeGameImage.png";
+import dragonpediaGameImage from "../assets/dragonpediaGameImage.png";
+import kittenKlickerGameImage from "../assets/kittenKlickerGameImage.png";
 ---
 
 <html lang="en">
@@ -55,9 +60,9 @@ import GameCard from "../components/gameCard.astro";
 			
 		</PopUp> -->
 
-		<GameCard gameTitle="Slime Game" gameSrc="https://itch.io/embed-upload/11424737?color=333333" />
-		<GameCard gameTitle="Dragonpedia" gameSrc="https://itch.io/embed-upload/13886107?color=e4a672" />
-		<GameCard gameTitle="Kitten Klicker" gameSrc="https://kittycat81.itch.io/kitten-klicker" />
+		<GameCard gameTitle="Slime Game" gameSrc="https://itch.io/embed-upload/11424737?color=333333" gameImg={slimeGameImage} />
+		<GameCard gameTitle="Dragonpedia" gameSrc="https://itch.io/embed-upload/13886107?color=e4a672" gameImg={dragonpediaGameImage} />
+		<GameCard gameTitle="Kitten Klicker" gameSrc="https://kittycat81.itch.io/kitten-klicker" gameImg={kittenKlickerGameImage}/>
 
 		<p class="font-handwriting text-4xl flex justify-center p-10 md:text-5xl xl:text-6xl">NOTE: Most of my games are not mobile friendly sadly...</p>
 </html>
