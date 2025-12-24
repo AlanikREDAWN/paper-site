@@ -30,6 +30,7 @@ import NowPlaying from "../components/NowPlaying.svelte";
 	<body class="bg-[url(../assets/personalSiteBackground.png)] bg-cover">
 		<Navbar />
 
+		<pagering-link theme="light" style="margin-left: 30px"></pagering-link>
 		<NowPlaying client:idle />
 
 		<Image src={mainPageIntro} alt="Hello! I'm Lilia" class="flex justify-center items-start mx-auto m-4" loading="eager"/>
@@ -46,9 +47,11 @@ import NowPlaying from "../components/NowPlaying.svelte";
 		</button>
 
 		
-
+		
 		<p class="font-handwriting text-4xl flex justify-center p-10 md:text-5xl xl:text-6xl">Also, check out my  <a href="/scrapbookGallery/" class="text-amber-700">"scrapbook" gallery</a>!</p>
 
 		
+
+		<script src="https://pagering.gideon.sh/embed.js" defer></script>
 	</body>
 </html>
